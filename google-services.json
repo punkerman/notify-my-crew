@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "39170714151",
+    "project_id": "notify-my-crew",
+    "storage_bucket": "notify-my-crew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39170714151:android:d7b4913bf3634ae793bc02",
+        "android_client_info": {
+          "package_name": "com.punkerman.notifymycrew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39170714151-ceuc65k20t8fvo8oqnro8h9a3i3fvs4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbie-ABnSwzNQk5BG7L4OWtkgMzwntw2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39170714151-ceuc65k20t8fvo8oqnro8h9a3i3fvs4g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "39170714151-pnkla87oc2vierrfjslj7hmngj5gm68b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.punkerman.notifymycrew"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
