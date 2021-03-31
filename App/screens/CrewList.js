@@ -49,7 +49,7 @@ const CrewList = ({ route }) => {
             sendPushNotification(id, `${user.userName} ${i18n.t('addedAs')} ${game.name} ${i18n.t('crewMember')}`);
             updateCrewMembers({ gameID: game.id, crewMember: { id: id, name: userName } });
         } else {
-            Alert.alert(i18n.t('errorFindingUser'))
+            Alert.alert(i18n.t('errorTitle'), i18n.t('errorFindingUser'))
         }
     }
 

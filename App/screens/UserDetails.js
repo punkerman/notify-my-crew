@@ -14,10 +14,9 @@ const UserDetails = () => {
     const { user } = state;
     const { control, handleSubmit, errors } = useForm();
 
-
     const handlePress = async () => {
         const a = await signOut();
-        a ? setLogOut() : Alert.alert(i18n.t('error'));
+        a ? setLogOut() : Alert.alert(i18n.t('errorTitle'), i18n.t('error'));
     }
 
     const handleOnUpdate = async (form) => {
@@ -26,14 +25,14 @@ const UserDetails = () => {
             const newUserName = user.userName !== form.userName
                 ? await isValidUserName(form.userName)
                     ? form.userName
-                    : Alert.alert(i18n.t('userExists'))
+                    : Alert.alert(i18n.t('errorTitle'), i18n.t('userExists'))
                 : user.userName;
 
 
             const newName = user.name !== form.name ? form.name : user.name;
             update(newName, newUserName)
         } else {
-            Alert.alert(i18n.t('dontChange'));
+            Alert.alert(i18n.t('errorTitle'), i18n.t('dontChange'));
         }
     }
 
@@ -43,12 +42,12 @@ const UserDetails = () => {
 
     const update = async (name, userName) => {
         const a = await updateUserInfo(user.id, name, userName);
-        a ? updateUserContext(name, userName) : Alert.alert(i18n.t('error'));
+        a ? updateUserContext(name, userName) : Alert.alert(i18n.t('errorTitle'), i18n.t('error'));
     }
 
     const updateUserContext = (name, userName) => {
         updateUser(name, userName);
-        Alert.alert(i18n.t('userUpdated'))
+        Alert.alert(i18n.t('success'), i18n.t('userUpdated'))
     }
 
     const onSubmit = (data) => {

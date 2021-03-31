@@ -14,7 +14,7 @@ export const isValidUserName = async (userName) => {
 }
 
 export const createUser = (userInfo, uid) => {
-    userInfo.crews = {};
+    userInfo.games = [];
     const created = firebase.db.collection('users').doc(uid).set(userInfo)
         .then(() => { return true })
         .catch((error) => { console.log(error); return false; });
@@ -69,6 +69,7 @@ export const loginUser = async (email, password) => {
                     if (!firestoreDocument.exists) {
                         user = { error: true, errorMessage: "User does not exist anymore." };
                     }
+                    console.log(`firebaseDocument++++`, firebaseDocument);
                     user = { ...firestoreDocument.data(), error: false };
                 })
                 .catch(error => {

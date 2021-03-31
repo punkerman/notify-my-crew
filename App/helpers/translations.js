@@ -28,7 +28,10 @@ export const translations = {
         signOut: 'Sign out',
         userDetails: 'User details',
         userUpdated: 'User details updated',
-        dontChange: 'User information did not change'
+        dontChange: 'User information did not change',
+        wrongLogin: 'Wrong email or password, try again',
+        errorTitle: 'Error',
+        success: 'Success'
     },
     es: {
         login: 'Ingresar',
@@ -59,6 +62,9 @@ export const translations = {
         signOut: 'Cerrar sesion',
         userDetails: 'Información del usuario',
         userUpdated: 'Información actualizada correctamente',
-        dontChange: 'No se detectaron cambios en la información del usuario'
+        dontChange: 'No se detectaron cambios en la información del usuario',
+        wrongLogin: 'Email o password incorrectos, intenta nuevamente',
+        errorTitle: 'Error',
+        success: 'Correcto'
     },
 };

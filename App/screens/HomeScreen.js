@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, View, Alert } from 'react-native'
+import { ImageBackground, View, Alert } from 'react-native'
 import { onGoogleButtonPress } from '../../database/googleSingin';
 import { useForm, Controller } from "react-hook-form";
 import { loginUser } from "../../database/fbActions";
@@ -29,7 +29,7 @@ const HomeScreen = ({ navigation }) => {
 
     const onLogin = async ({ email, password }) => {
         const userInfo = await loginUser(email, password);
-        userInfo.error ? Alert.alert(userInfo.error) : false;
+        userInfo.error ? Alert.alert(i18n.t('errorTitle'), i18n.t('wrongLogin')) : false;
     }
 
     return (

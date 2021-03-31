@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
 import { useForm, Controller } from "react-hook-form";
 import { createUser, isValidUserName, createFirebaseUser } from '../../database/fbActions';
 import { userContext } from '../userContext/UserState';
@@ -15,14 +15,14 @@ const RegisterScreen = ({ route }) => {
 
     const handleOnSave = async (form) => {
         const isUserNamePicked = await isValidUserName(form.userName);
-        !isUserNamePicked ? addUser(form) : Alert.alert(i18n.t('userExists'));
+        !isUserNamePicked ? addUser(form) : Alert.alert(i18n.t('errorTitle'), i18n.t('userExists'));
     }
 
     const addUser = async (formData) => {
         const { password, ...userInfo } = formData
         const uid = await createFirebaseUser(userInfo.email, password)
         const userCreated = await createUser(userInfo, uid);
-        userCreated ? setUser({ ...userInfo, id: uid }) : Alert.alert(i18n.t('errorCreatingUser'));
+        userCreated ? setUser({ ...userInfo, id: uid }) : Alert.alert(i18n.t(i18n.t('errorTitle'), 'errorCreatingUser'));
     };
 
     const onSubmit = (data) => {
@@ -112,11 +112,11 @@ const RegisterScreen = ({ route }) => {
             <View style={styles.button}>
                 <Button
                     onPress={handleSubmit(onSubmit, onError)}
-                    title="Save"
+                    title="Register"
                     color="#841584"
-                    accessibilityLabel="save"
+                    accessibilityLabel="register"
                 >
-                    {i18n.t('save')}
+                    {i18n.t('register')}
                 </Button>
             </View>
 
